@@ -14,16 +14,7 @@ class SpecificCategory extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          HeaderWidget(title: "Home", action: [
-            Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: IconButton(
-                  onPressed: () {
-                    // Get.dialog(AddNewProduct());
-                  },
-                  icon: Icon(Icons.add),
-                ))
-          ]),
+          const HeaderWidget(title: "Home", ),
           Expanded(
             child: Container(
               padding: EdgeInsets.all(8),

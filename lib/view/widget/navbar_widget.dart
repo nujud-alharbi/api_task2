@@ -18,12 +18,12 @@ class NavBarWidget extends StatelessWidget {
 
             BottomNavigationBarItem(
                 label: "Product",
-                activeIcon: Icon(Icons.home),
-                icon:Icon(Icons.home_outlined)),
+                activeIcon: Icon(Icons.home,color: Colors.blueGrey,),
+                icon:Icon(Icons.home_outlined,color: Colors.blueGrey,)),
 
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.favorite),
-              icon:Icon(Icons.category_rounded),
+              activeIcon: Icon(Icons.favorite,color: Colors.blueGrey,),
+              icon:Icon(Icons.category_rounded,color: Colors.blueGrey,),
               label: 'Category',
             ),
 

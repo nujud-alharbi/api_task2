@@ -15,7 +15,7 @@ class HeaderWidget extends StatelessWidget {
       backgroundColor: Colors.blueGrey,
       title: Text(
         title != null ? title! : '',
-        style: Theme.of(context).textTheme.bodyLarge ,
+        style: TextStyle(color: Colors.white) ,
 
       ),
       leading: leading,

@@ -9,7 +9,11 @@ import '../../constant/api_string.dart';
 class ProductController extends GetxController {
   final apiService = ProductService();
   var baseUrl = ApiString.baseUrl;
-
+  bool isSort = false;
+  bool sortProduct() {
+    isSort = !isSort;
+    return isSort;
+  }
 
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -31,7 +35,7 @@ var typeCategory;
   onInit() async {
     super.onInit();
     await getAllData();
-    await getAllDataTypeCategory();
+    // await getAllDataTypeCategory();
 
 
   }
@@ -43,25 +47,34 @@ var typeCategory;
 
   Future<List<Product>> getAllData() async {
     List todoList =
-    await apiService.getAllData(url: 'https://fakestoreapi.com/products', headers: headers);
+    await apiService.getAllData(url: '$baseUrl/products', headers: headers);
     return todoList.map((todo) => Product.fromJson(todo)).toList();
   }
 
   Future<List<Product>> getLimitData() async {
     List todoList =
-    await apiService.getAllData(url: 'https://fakestoreapi.com/products?limit=5', headers: headers);
+    await apiService.getAllData(url: '$baseUrl/products?limit=5', headers: headers);
     return todoList.map((todo) => Product.fromJson(todo)).toList();
   }
 
 
   Future<List<Product>> getAllDataTypeCategory() async {
     List todoList =
-    await apiService.getAllData(url: 'https://fakestoreapi.com/products/category/$typeCategory', headers: headers);
+    await apiService.getAllData(url: '$baseUrl/products/category/$typeCategory', headers: headers);
     return todoList.map((todo) => Product.fromJson(todo)).toList();
   }
+
+
+  Future<List<Product>> getDataSort() async {
+    List todoList =
+    await apiService.getAllData(url: '$baseUrl/products?sort=desc', headers: headers);
+    return todoList.map((todo) => Product.fromJson(todo)).toList();
+  }
+
+
   postData(Product model) async {
     await apiService.postData(
-      url: 'https://fakestoreapi.com/products',
+      url: '$baseUrl/products',
       body: {
         'title': model.title,
         'description': model.description,
@@ -90,6 +103,6 @@ var typeCategory;
   }
 
   deleteData(String id) async {
-    await apiService.deleteData(url: 'https://fakestoreapi.com/products', id: id);
+    await apiService.deleteData(url: '$baseUrl/products', id: id);
   }
 }

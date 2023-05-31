@@ -1,11 +1,8 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../logic/controller/product_controller.dart';
-import '../../../routes/route.dart';
+
 import '../../widget/header_widget.dart';
 import '../../widget/list_item.dart';
 
@@ -14,25 +11,35 @@ class ShowAllProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Column(
         children: [
-          HeaderWidget(title: "All Product", action: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: IconButton(onPressed: (){
-                // Get.dialog(AddNewProduct());
-              },icon: Icon(Icons.add),)
-            )
-          ]),
+          const HeaderWidget(title: "All Product",),
+          GetBuilder<ProductController>(builder: (controller) {
+            return Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                onPressed: () {
+                  controller.sortProduct();
+                  print(controller.isSort);
+                  controller.refresh();
+                },
+                child: const Icon(
+                  Icons.filter_list_rounded,
+                  color: Colors.blueGrey,
+                  size: 25,
+                ),
+              ),
+            );
+          }),
           Expanded(
-
             child: Container(
-              padding:  EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               child: GetBuilder<ProductController>(builder: (controller) {
                 return FutureBuilder(
-                    future: controller.getAllData(),
+                    future: controller.isSort
+                        ? controller.getAllData()
+                        : controller.getDataSort(),
                     builder: (context, snapshot) {
                       print('snapshot.data?.length ${snapshot.data?.length}');
                       if (snapshot.hasData) {
@@ -44,12 +51,10 @@ class ShowAllProductScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               var data = snapshot.data?[index];
 
-
                               return ListItem(
                                 data: data,
                                 controller: controller,
-                                index: index ,
-
+                                index: index,
                               );
                             },
                           );

@@ -15,13 +15,13 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<NavBarController>(builder: (controller) {
       return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.blueGrey,
           actions:const [
 
           ],
           title: Text(
             controller.title[controller.currentIndex],
-            style: TextStyle(color: Colors.blueGrey,
+            style: TextStyle(color: Colors.white,
             fontWeight: FontWeight.bold),
           ),
         ),

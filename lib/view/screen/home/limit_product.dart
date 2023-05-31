@@ -23,7 +23,7 @@ class LimitShowProduct extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed(Routes.show_all_product_screen);
                 },
-                child: const Text("See All Product")),
+                child: const Text("See All Product",style: TextStyle(color: Colors.blueGrey),)),
           ),
           const SizedBox(
             height: 20,
@@ -44,11 +44,6 @@ class LimitShowProduct extends StatelessWidget {
                             itemCount: snapshot.data?.length,
                             itemBuilder: (context, index) {
                               var data = snapshot.data?[index];
-
-                              // var date =
-                              // // DateTime.now();
-                              // DateFormat('yyyy-MM-dd hh:mm:ss')
-                              //     .parse(data!.date);
                               return ListItem(
                                 data: data,
                                 controller: controller,
