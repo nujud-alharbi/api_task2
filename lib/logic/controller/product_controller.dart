@@ -9,7 +9,8 @@ import '../../constant/api_string.dart';
 class ProductController extends GetxController {
   final apiService = ProductService();
   var baseUrl = ApiString.baseUrl;
-  var idUser ;
+
+
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController dateController = TextEditingController();
@@ -30,6 +31,8 @@ var typeCategory;
   onInit() async {
     super.onInit();
     await getAllData();
+    await getAllDataTypeCategory();
+
 
   }
 

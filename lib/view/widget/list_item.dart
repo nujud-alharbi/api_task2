@@ -1,12 +1,12 @@
 import 'package:api_task2/logic/controller/product_controller.dart';
-import 'package:api_task2/view/screen/home/details_screen.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../constant/app_image.dart';
 import '../../model/product_model.dart';
-import '../../routes/route.dart';
+
 
 
 class ListItem extends StatelessWidget {
@@ -76,23 +76,30 @@ final int index;
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const SizedBox(
+                            children:  [
+                              SizedBox(
                                 height: 4,
+
                               ),
-                              // Text(
-                              //   data?.title ?? "",
-                              //     overflow: TextOverflow.ellipsis
-                              // ),
+                              SizedBox(
+                                width: 200,
+                                child: Text(
+                                  data!.title ?? "",
+                                    overflow: TextOverflow.ellipsis
+                                ),
+                              ),
 
                               const SizedBox(
                                 height: 4,
                               ),
-                              // Text(
-                              // data!.price!.toString()
-                              // ),
+                              Text(
+                              data!.price!.toString() +" SR"
+                              ),
                               const SizedBox(
                                 height: 8,
+                              ),
+                              Text(
+                                  data!.rating!.rate.toString()
                               ),
                             ],
                           ),

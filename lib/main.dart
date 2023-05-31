@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       //
-      initialRoute: Routes.limit_product,
+      initialRoute: Routes.home_screen,
       getPages: AppRoutes.routes,
  // home: LimitShowProduct(),
 

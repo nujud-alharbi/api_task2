@@ -1,5 +1,5 @@
 
-import 'package:api_task2/view/widget/home/add_product.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,10 +44,7 @@ class ShowAllProductScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               var data = snapshot.data?[index];
 
-                              // var date =
-                              // // DateTime.now();
-                              // DateFormat('yyyy-MM-dd hh:mm:ss')
-                              //     .parse(data!.date);
+
                               return ListItem(
                                 data: data,
                                 controller: controller,

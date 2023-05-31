@@ -14,16 +14,6 @@ class LimitShowProduct extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          HeaderWidget(title: "Product Api", action: [
-            Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: IconButton(
-                  onPressed: () {
-                    // Get.dialog(AddNewProduct());
-                  },
-                  icon: Icon(Icons.add),
-                ))
-          ]),
           const SizedBox(
             height: 20,
           ),
@@ -31,9 +21,9 @@ class LimitShowProduct extends StatelessWidget {
             alignment: Alignment.topRight,
             child: TextButton(
                 onPressed: () {
-                  Get.toNamed(Routes.home_screen);
+                  Get.toNamed(Routes.show_all_product_screen);
                 },
-                child: Text("See All Product")),
+                child: const Text("See All Product")),
           ),
           const SizedBox(
             height: 20,

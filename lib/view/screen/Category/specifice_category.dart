@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,29 +5,28 @@ import '../../../logic/controller/product_controller.dart';
 import '../../widget/header_widget.dart';
 import '../../widget/list_item.dart';
 
-class SubCategory extends StatelessWidget {
-   SubCategory({Key? key, required this.func}) : super(key: key);
-Future<dynamic>  func ;
-
+class SpecificCategory extends StatelessWidget {
+  SpecificCategory({Key? key, required this.func}) : super(key: key);
+  Future<dynamic> func;
 
   @override
   Widget build(BuildContext context) {
-    return
-   Scaffold(
+    return Scaffold(
       body: Column(
         children: [
           HeaderWidget(title: "Home", action: [
             Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: IconButton(onPressed: (){
-                  // Get.dialog(AddNewProduct());
-                },icon: Icon(Icons.add),)
-            )
+                child: IconButton(
+                  onPressed: () {
+                    // Get.dialog(AddNewProduct());
+                  },
+                  icon: Icon(Icons.add),
+                ))
           ]),
           Expanded(
-
             child: Container(
-              padding:  EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               child: GetBuilder<ProductController>(builder: (controller) {
                 return FutureBuilder(
                     future: func,
@@ -45,15 +41,10 @@ Future<dynamic>  func ;
                             itemBuilder: (context, index) {
                               var data = snapshot.data?[index];
 
-                              // var date =
-                              // // DateTime.now();
-                              // DateFormat('yyyy-MM-dd hh:mm:ss')
-                              //     .parse(data!.date);
                               return ListItem(
                                 data: data,
                                 controller: controller,
-                                index: index ,
-
+                                index: index,
                               );
                             },
                           );

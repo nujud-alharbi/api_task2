@@ -12,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey,
       title: Text(
         title != null ? title! : '',
         style: Theme.of(context).textTheme.bodyLarge ,

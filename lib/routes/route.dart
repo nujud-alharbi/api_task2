@@ -1,5 +1,6 @@
 import 'package:api_task2/view/screen/home/limit_product.dart';
-import 'package:api_task2/view/widget/home/add_product.dart';
+import 'package:api_task2/view/screen/main_shop_screen.dart';
+
 import 'package:api_task2/view/screen/home/show_all_product_screen.dart';
 
 import 'package:get/get.dart';
@@ -15,19 +16,25 @@ class AppRoutes {
     //     page: () => DetailsScreen(),
     //     binding: Binding()),
     GetPage(
-        name: Routes.home_screen,
+        name: Routes.show_all_product_screen,
         page: () => ShowAllProductScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.limit_product,
         page: () => LimitShowProduct(),
         binding: Binding()),
+    GetPage(
+        name: Routes.home_screen,
+        page: () => HomeScreen(),
+     binding: Binding()
+    ),
 
   ];
 }
 
 class Routes {
   static const details_screen = '/details_screen';
-  static const home_screen = '/home_screen';
+  static const show_all_product_screen = '/show_all_product_screen';
   static const limit_product = '/limit_product';
+  static const home_screen = '/home_screen';
 }
