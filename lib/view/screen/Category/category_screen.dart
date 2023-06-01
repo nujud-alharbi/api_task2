@@ -12,8 +12,7 @@ class CategoryScreen extends StatelessWidget {
     List nameCategory = [
       "Jewelery",
       "Electronics",
-      "Men's clothes",
-      "Women's clothes"
+
     ];
     return Scaffold(
         body: Column(

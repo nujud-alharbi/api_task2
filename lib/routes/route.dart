@@ -1,5 +1,5 @@
 import 'package:api_task2/view/screen/home/limit_product.dart';
-import 'package:api_task2/view/screen/main_shop_screen.dart';
+import 'package:api_task2/view/screen/nav_screen.dart';
 
 import 'package:api_task2/view/screen/home/show_all_product_screen.dart';
 
@@ -25,7 +25,7 @@ class AppRoutes {
         binding: Binding()),
     GetPage(
         name: Routes.home_screen,
-        page: () => HomeScreen(),
+        page: () => NavScreen(),
      binding: Binding()
     ),
 

@@ -7,8 +7,8 @@ import '../../logic/controller/navbar_controller.dart';
 import '../widget/navbar_widget.dart';
 
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class NavScreen extends StatelessWidget {
+  NavScreen({Key? key}) : super(key: key);
   final getStorage = GetStorage();
   @override
   Widget build(BuildContext context) {

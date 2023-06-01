@@ -22,8 +22,8 @@ class NavBarWidget extends StatelessWidget {
                 icon:Icon(Icons.home_outlined,color: Colors.blueGrey,)),
 
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.favorite,color: Colors.blueGrey,),
-              icon:Icon(Icons.category_rounded,color: Colors.blueGrey,),
+              activeIcon: Icon(Icons.category_rounded,color: Colors.blueGrey,),
+              icon:Icon(Icons.category_outlined,color: Colors.blueGrey,),
               label: 'Category',
             ),
 
