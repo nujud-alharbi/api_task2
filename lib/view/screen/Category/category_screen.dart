@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widget/header_widget.dart';
-
 import '../../widget/category/category_item.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -12,7 +10,8 @@ class CategoryScreen extends StatelessWidget {
     List nameCategory = [
       "Jewelery",
       "Electronics",
-
+      "Men's clothes",
+      "Women's clothes",
     ];
     return Scaffold(
         body: Column(

@@ -7,14 +7,11 @@ import 'package:get/get.dart';
 
 
 import '../binding/binding.dart';
-import '../view/screen/home/details_screen.dart';
+
 
 class AppRoutes {
   static final routes = [
-    // GetPage(
-    //     name: Routes.details_screen,
-    //     page: () => DetailsScreen(),
-    //     binding: Binding()),
+
     GetPage(
         name: Routes.show_all_product_screen,
         page: () => ShowAllProductScreen(),

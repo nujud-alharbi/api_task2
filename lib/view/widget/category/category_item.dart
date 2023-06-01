@@ -27,11 +27,15 @@ class ListItemCategory extends StatelessWidget {
               Get.to(
                   SpecificCategory(func: controller.getAllDataTypeCategory()));
             } else if (index == 2) {
-              Get.to(SpecificCategory(func: controller.getAllData()));
+              controller.typeCategory =  "men's clothing";
+              Get.to(
+                  SpecificCategory(func: controller.getAllDataTypeCategory()));
             } else if (index == 3) {
-              Get.to(SpecificCategory(func: controller.getAllData()));
+              controller.typeCategory = "women's clothing";
+              Get.to(
+                  SpecificCategory(func: controller.getAllDataTypeCategory()));
             }
-// Get.to(DetailsScreen(productModel: Product(title: data!.title)));
+
           },
           child: SizedBox(
             width: 400,
